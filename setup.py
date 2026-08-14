@@ -58,7 +58,7 @@ extensions = cythonize([
                             include_dirs=includedirs,
                             library_dirs=libdirs,
                             libraries=['frog','ucto','folia'],
-                            extra_compile_args=['--std=c++0x'] + extra_options) 
+                            extra_compile_args=['--std=c++17'] + extra_options) 
                        ],
                 compiler_directives={"language_level": "3"}
                 )
@@ -66,11 +66,11 @@ extensions = cythonize([
 
 setup(
     name = 'python-frog',
-    version = '0.6.10', #also ensure UCTODATAVERSION and FROGDATAVERSION are good in frog_wrapper.pyx
+    version = '0.6.12', #also ensure UCTODATAVERSION and FROGDATAVERSION are good in frog_wrapper.pyx
     author = "Maarten van Gompel",
     author_email = "proycon@anaproy.nl",
     description = ("Python binding to Frog, an NLP suite for Dutch doing part-of-speech tagging, lemmatisation, morphological analysis, named-entity recognition, shallow parsing, and dependency parsing."),
-    license = "GPLv3",
+    license = "GPL-3.0-only",
     keywords = "nlp computational_linguistics dutch pos lemmatizer",
     url = "https://github.com/proycon/python-frog",
     ext_modules = extensions,
@@ -86,6 +86,5 @@ setup(
         "Operating System :: POSIX",
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",
-        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     ],
 )
